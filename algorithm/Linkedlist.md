@@ -5,7 +5,7 @@
 
 你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 
-```cddd
+```c
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
     struct ListNode *head = NULL,*tail = NULL;
     int carry = 0;
@@ -50,7 +50,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 # 19. 删除链表的倒数第N给个节点
 给你一个链表，删除链表的倒数第n个结点，并且返回链表的头结点。
 
-```clike
+```c
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     int i = 0;
     struct ListNode* node = head;
@@ -83,7 +83,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     删除节点的上一个节点，然后进行删除操作。如果第一个指针已经遍历的最后一个，第二个指针还没开始遍历，则说明要删除的是
     头节点。程序如下：
 
-```clike
+```c
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     struct ListNode* node1 = head;
     struct ListNode* node2 = head;
@@ -112,7 +112,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
 # 21.合并两个有序链表
 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
 
-```clike
+```c
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
     if(!l1){
         return l2;
@@ -132,7 +132,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 一开始没想到用递归的方法，但是为啥要把递归的方法放到上面，是因为递归法函数更简洁更不容易想到,希望自己下次遇到类似题目可以首先想到递归。
 下面的方法是改进后的迭代法，本来有40行，后来被我缩减到25行。题目很简单没啥说的。
 
-```clike
+```c
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
     struct ListNode head ;
     struct ListNode *temp = &head;
@@ -165,7 +165,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
 
 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
-```clike
+```c
 struct ListNode* swapPairs(struct ListNode* head){
     if(!head) return NULL;
     if(!(head->next)) return head;
@@ -181,7 +181,7 @@ struct ListNode* swapPairs(struct ListNode* head){
 
 # 61.旋转链表
 给你一个链表的头节点head，旋转链表，将链表每个节点向右移动k个位置。
-```clike
+```c
 struct ListNode* rotateRight1(struct ListNode* head){
     struct ListNode* first,*last,*prelast;
     if(!head) return NULL;
@@ -218,7 +218,7 @@ struct ListNode* rotateRight(struct ListNode* head, int k){
 根据这道题目的描述，首先想到的是写一个能把链表右旋一位的函数rotateRight1，然后根据要移的位数来决定调用几次这个函数。很快写出来之后查看解析，发现解析用了
 一个很巧妙的办法。具体方法是先算出旋转之后的链表将在哪里断开，然后断开这里再把链表首位相接就完成了。这样节省了很多时间。上面的方法时间复杂度为O(n²)，下面
 的方法时间复杂的为O(n)。
-```clike
+```c
 struct ListNode* rotateRight(struct ListNode* head, int k){
     if(k==0 || head == NULL || head->next == NULL)
         return head;
@@ -247,7 +247,7 @@ struct ListNode* rotateRight(struct ListNode* head, int k){
 存在一个按升序排列的链表，给你这个链表的头节点head，请你删除所有重复的元素，使每个元素只出现一次 。
 
 返回同样按升序排列的结果链表。
-```clike
+```c
 struct ListNode* deleteDuplicates(struct ListNode* head){
     if(head == NULL || head->next == NULL)
         return head;
@@ -272,7 +272,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head){
 存在一个按升序排列的链表，给你这个链表的头节点head，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中没有重复出现的数字。
 
 返回同样按升序排列的结果链表
-```clike
+```c
 struct ListNode* deleteDuplicates(struct ListNode* head){
     if(head == NULL || head->next == NULL)
         return head;
@@ -301,7 +301,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head){
 给你一个链表的头节点head和一个特定值x，请你对链表进行分隔，使得所有小于x的节点都出现在大于或等于x的节点之前。
 
 你应当保留两个分区中每个节点的初始相对位置
-```clike
+```c
 struct ListNode* partition(struct ListNode* head, int x){
     if(!head || !(head->next)) return head;
     struct ListNode* p1,* p2,*p;
@@ -331,7 +331,7 @@ struct ListNode* partition(struct ListNode* head, int x){
 
 # 206.反转链表
 给你单链表的头节点head请你反转链表，并返回反转后的链表。
-```clike
+```c
 struct ListNode* reverseList(struct ListNode* head){
     if(!head || !(head->next)) return head;
     struct ListNode node;
