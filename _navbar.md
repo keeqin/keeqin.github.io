@@ -4,4 +4,4 @@
     * [Linkedlist](algorithm/Linkedlist.md)
     * [Stack](algorithm/Stack.md)
 * 每日一题
-    * [2021](每日一题/2021.md)
+    * [2021](algorithm/每日一题/2021.md)
