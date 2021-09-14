@@ -218,3 +218,44 @@ let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
 print("the volume of fourByFiveByTwo is \(fourByFiveByTwo.volume)")
 // 打印“the volume of fourByFiveByTwo is 40.0”
 ```
+### 属性观察器
+```swift
+class StepCounter {
+    var totalSteps: Int = 0 {
+        //赋值前执行
+        willSet(newTotalSteps) {
+            print("将 totalSteps 的值设置为 \(newTotalSteps)")
+        }
+
+        //赋值完成后执行
+        didSet {
+            if totalSteps > oldValue  {
+                print("增加了 \(totalSteps - oldValue) 步")
+            }
+        }
+    }
+}
+```
+### 属性包装器
+@propertyWapper修饰的结构体作为属性包装器
+### 全局变量和局部变量
+全局变量是在函数、方法、闭包或任何类型之外定义的变量。局部变量是在函数、方法或闭包内部定义的变量。  
+在全局或局部范围都可以定义计算型变量和为存储型变量定义观察器。计算型变量跟计算属性一样，返回一个计算结果而不是存储值，声明格式也完全一样。
+### 类型属性
+struct,enum,class中的属性用static修饰。类型属性可以直接通过类型访问，而不是通过实例访问
+## 实例方法
+结构体，枚举，类中的方法叫实例方法。  
+结构体和枚举是值类型。默认情况下，值类型的属性不能在它的实例方法中被修改。加上mutating就可以修改。
+```swift
+struct Point {
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX: Double, y deltaY: Double) {
+        x += deltaX
+        y += deltaY
+    }
+}
+var somePoint = Point(x: 1.0, y: 1.0)
+somePoint.moveBy(x: 2.0, y: 3.0)
+print("The point is now at (\(somePoint.x), \(somePoint.y))")
+// 打印“The point is now at (3.0, 4.0)”
+```
