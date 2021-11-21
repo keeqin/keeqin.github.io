@@ -18,3 +18,42 @@ void bubble_sort(int ar[], int size){
     }
 }
 ```
+# 简单选择排序
+```c++
+//时间复杂度O(n2)
+//空间复杂度O(n)
+void select_Sort(int ar[], int size){
+    int min;
+    int minNum;
+    for(int i=1;i<size;++i){
+        min = i-1;
+        for(int j=i;j<size;++j){
+            if(ar[j] < ar[min]) min = j;
+        }
+        if(min != i-1){
+            minNum = ar[min];
+            ar[min] = ar[i-1];
+            ar[i-1] = minNum;
+        }
+    }
+}
+```
+
+# 插入排序
+```c++
+//时间复杂度O(n2)
+//空间复杂度o(n)
+//比bubble和select稍好
+void insert_Sort(int ar[], int size){
+    for(int i=1;i<size;++i){
+        if(ar[i] < ar[i-1]){
+            int num = ar[i];
+            int j=i-1;
+            for(;j>=0 && ar[j] > num;--j){
+                ar[j+1] = ar[j];
+            }
+            ar[j+1] = num;
+        }
+    }
+}
+```
