@@ -57,3 +57,33 @@ void insert_Sort(int ar[], int size){
     }
 }
 ```
+
+## 快速排序
+```c++
+void swap(int arr[],int n1,int n2){
+    int temp = arr[n1];
+    arr[n1] = arr[n2];
+    arr[n2] = temp;
+}
+
+int Partition(int arr[],int low,int hight){
+    int pivotKey = arr[low];
+    while(low < hight){
+        while(low<hight && arr[hight] >= pivotKey) --hight;
+        swap(arr, low, hight);
+        while (low<hight && arr[low] <= pivotKey) ++low;
+        swap(arr, low, hight);
+    }
+    return low;
+}
+void Qsort(int arr[],int low,int hight){
+    if (low < hight) {
+        int pivot = Partition(arr, low, hight);
+        Qsort(arr, low, pivot-1);
+        Qsort(arr, pivot+1, hight);
+    }
+}
+void quick_sort(int arr[],int size){
+    Qsort(arr,0,size);
+}
+```
