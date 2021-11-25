@@ -15,15 +15,11 @@
 ```swift
 //一般形式
 name.sort(by: {(s1: String, s2: String) -> Bool in return s1 > s2 })
-
 //自动类型推断和隐式返回
 name.sort(by: { s1, s2 in s1 > s2 })
-
 //参数名称缩写
 name.sort(by: { $0 > $1 })
-```
-运算符法：
-```swift
+//运算符法：
 name.sort(by: >)
 ```
 
