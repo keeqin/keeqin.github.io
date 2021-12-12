@@ -22,7 +22,7 @@ E-mail: <qk2313163237@gmail.com>
     * 使用altium designer画pcb
 * 软件：
     * 熟悉 rt-thread、freertos
-    * 通信协议：MQTT、HTTP、Websocket
+    * 会用：MQTT、HTTP、Websocket
     * IDE：keil、vscode、xcode、arduino
     * 熟悉版本控制工具git的使用    
 
