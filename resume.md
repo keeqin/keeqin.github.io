@@ -1,8 +1,5 @@
 ## <center>秦柯</center>
 
-<img src="profile.JPG" style="zoom:5%; border-radius: 80% !important;
-    border: 30px solid #eee;" />  
-
 E-mail: <qk2313163237@gmail.com>  
 学校：[桂林电子科技大学](http://www.gliet.edu.cn)  
 专业：[电子封装技术](https://www.guet.edu.cn/zs/list_zy.jsp?urltype=tree.TreeTempUrl&wbtreeid=1118)  
